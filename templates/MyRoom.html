@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyRoom</title>
+    <link rel="stylesheet"  href="../static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net;">
+
+</head>
+<body>
+    <div class="topnav">
+        <a href="{{home_url}}">home</a>
+        <a href="{{about_url}}">about me</a>
+        <a href="">my projects</a>
+        <a href="">pictures</a>
+        <a class="active" href="">MyRoom</a>
+    </div>
+
+    <div id="mainDiv">
+        <h1>Welcome!</h1>
+        <p>temperature: {{ temperature }}</p>
+        <p>Humidity: {{ humidity}}%</p>
+    </div>
+    <div style="width: 80%; margin: auto; background-color: rgb(189, 189, 0);" >
+        <canvas id="tempHumidityChart"></canvas>
+    </div>
+    <div id="mainDiv">
+        <p>last_updated: {{last_updated}}</p>
+    </div>
+    <script src="../static/src.js" defer></script>
+
+</body>
+</html>

@@ -3,7 +3,8 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Fira Code', monospace
+    font-family: 'Fira Code', monospace;
+    background-color: rgba(13, 17, 23, 1);
 }
 
 .topnav {
@@ -14,9 +15,9 @@ body{
 .topnav a{
     float: left;
     color: rgb(101, 30, 156);
-    font-size: 1rem;
+    padding: 8px 10px;
+    font-size: 0.8em;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
 }
 
@@ -30,26 +31,41 @@ body{
     color: rgb(67, 146, 7);
 }
 
-body{
-    background-color: rgba(13, 17, 23, 1);;
-}
-
 .container{
     width: 95%;
     padding: 1em;
     font-size: 1em;   
-    font-family: 'Fira Code', monospace;
     color: white;
 }
-
+.container a{
+    text-decoration: none;
+    color: white;
+}
+.container a:hover{
+    text-decoration: underline;
+}
 @media (min-width: 768px) {
     .container {
-      width: 80%;
-      margin: 0 auto; /* centers the container */
-      padding: 0px 20% 0px 10%;
+    font-size: 1.5em;
+    width: 80%;
+    padding: 0px 20% 0px 10%;
+    }
+    .topnav a{
+        font-size: 1.2em;
+        padding: 14px 16px;
     }
   }
-
+@media (min-width: 1500px) {
+    .container {
+    font-size: 2em;
+    width: 70%;
+    padding: 0px 30% 0px 10%;
+    }
+    .topnav a{
+        font-size: 1.5em;
+        padding: 18px 20px;
+    }
+}
 #mainDiv {
     color: rgb(222,228,234);
     max-width: fit-content;

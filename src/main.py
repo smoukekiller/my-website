@@ -25,21 +25,44 @@ csp = {
 @app.route("/")
 def home():
     return render_template("home.html", 
-                           about_url=url_for('about'),
-                           myroom_url = url_for('MyRoom'))
+                            about_url=url_for('about'),
+                            pictures_url=url_for('pictures'),
+                            projects_url=url_for('MyProjects'),                         
+                            myroom_url = url_for('MyRoom'))
+
 @app.route("/about")
 def about():
     return render_template("about-me.html", 
-                           home_url=url_for('home'),
-                           myroom_url = url_for('MyRoom'))
+                            home_url=url_for('home'),
+                            pictures_url=url_for('pictures'),
+                            projects_url=url_for('MyProjects'),
+                            myroom_url = url_for('MyRoom'))
 
+@app.route("/MyProjects")
+def MyProjects():
+    return render_template("my-projects.html",
+                            home_url=url_for('home'),
+                            about_url=url_for('about'),
+                            pictures_url=url_for('pictures'),
+                            myroom_url=url_for('MyRoom'))
+
+@app.route("/pictures")
+def pictures():
+    return render_template("pictures.html",
+                            home_url=url_for('home'),
+                            about_url=url_for('about'),
+                            projects_url=url_for('MyProjects'),
+                            myroom_url=url_for('MyRoom'))
 @app.route("/MyRoom")
 def MyRoom():
     temperature, humidity, last_updated = get_data()
     
     return render_template("MyRoom.html", temperature=temperature, humidity=humidity, last_updated=last_updated,
                            about_url=url_for('about'),
-                           home_url=url_for('home'))
+                           home_url=url_for('home'),
+                           projects_url=url_for('MyProjects'),
+                           pictures_url=url_for('pictures'))
+
 
 
 @app.route('/data')

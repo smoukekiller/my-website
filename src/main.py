@@ -21,7 +21,7 @@ csp = {
         'https://cdn.jsdelivr.net'
     ],
 }
-Talisman(app, content_security_policy=csp, force_https=True)
+# Talisman(app, content_security_policy=csp, force_https=True)
 @app.route("/")
 def home():
     return render_template("home.html", 
@@ -77,6 +77,6 @@ def fetch_data():
 if __name__ == "__main__":
    app.run(
     host='0.0.0.0',
-    port=config.PORT,
-    ssl_context=(config.PATH_TO_FULLCHAIN_PEM, config.PATH_TO_PRIVKEY_PEM)
+    port=config.PORT
+    # ssl_context=(config.PATH_TO_FULLCHAIN_PEM, config.PATH_TO_PRIVKEY_PEM)
 )

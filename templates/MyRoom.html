@@ -16,7 +16,7 @@
         <a class="active" href="">MyRoom</a>
     </div>
 
-    <div class="container">
+    <div class="container myroom">
         <h1>Welcome!</h1>
         <p>temperature: {{ temperature }}</p>
         <p>Humidity: {{ humidity}}%</p>
@@ -24,7 +24,7 @@
     <div style="width: 80%; margin: auto; background-color: rgb(189, 189, 0);" >
         <canvas id="tempHumidityChart"></canvas>
     </div>
-    <div id="mainDiv">
+    <div class="container myroom">
         <p>last_updated: {{last_updated}}</p>
     </div>
     <script src="../static/src.js" defer></script>

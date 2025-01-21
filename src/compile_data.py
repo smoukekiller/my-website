@@ -18,11 +18,17 @@ def compile_data() -> tuple[list, list, list]:
     end_file = open(f"{DATA_PATH}{end_filename}.txt")
     
     start_text = start_file.read()
-    while True:
+    max_attempts = 1000000  # Set a reasonable upper limit for attempts
+    attempts = 0
+    while attempts < max_attempts:
         start_index = start_text.find(str(start_timestamp))
-        if (start_index != -1):
+        if start_index != -1:
             break
         start_timestamp += 1
+        attempts += 1
+    else:
+        raise ValueError("Timestamp not found within the expected range.")
+
     start_text = start_text[start_index:]
     start_array = start_text.split(sep="\n")[:-1]
 
